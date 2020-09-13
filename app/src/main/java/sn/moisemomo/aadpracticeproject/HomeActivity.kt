@@ -1,5 +1,6 @@
 package sn.moisemomo.aadpracticeproject
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -18,7 +19,9 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         setSupportActionBar(findViewById(R.id.toolbar))
         setupFragmentAdapter()
+        handleClicks()
     }
+
 
     private fun setupFragmentAdapter() {
         mFragmentAdapter = FragmentAdapter(supportFragmentManager,
@@ -31,6 +34,12 @@ class HomeActivity : AppCompatActivity() {
         tab_layout.apply {
             setupWithViewPager(home_view_pager)
         }
+    }
+
+    private fun handleClicks() {
+       home_submit.setOnClickListener {
+           startActivity(Intent(this, FormSubmissionActivity::class.java))
+       }
     }
 
     class FragmentAdapter(fm: FragmentManager, private val titles: MutableList<String>,
