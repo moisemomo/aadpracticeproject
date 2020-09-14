@@ -1,5 +1,7 @@
 package sn.moisemomo.aadpracticeproject.api
 
+import com.bumptech.glide.load.engine.Resource
+import okhttp3.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET

@@ -8,7 +8,12 @@ import sn.moisemomo.aadpracticeproject.repositories.FormSubmissionRepository
 class FormSubmissionViewModel: ViewModel() {
 
     fun submitFormInfo (email: String, name: String, lastName: String, projectUrl: String) = liveData(Dispatchers.IO) {
-        val submission  = FormSubmissionRepository.submitForm(email, name, lastName, projectUrl)
-        emit(submission)
+        val submissionResponseCode = try {
+            FormSubmissionRepository.submitForm(email, name, lastName, projectUrl)
+            200
+        } catch (e: Exception) {
+            400
+        }
+        emit(submissionResponseCode)
     }
 }
