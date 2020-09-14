@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_learning_leaders.*
+import sn.moisemomo.aadpracticeproject.viewmodels.LeadersViewModel
 
 /**
  * A simple [Fragment] subclass.

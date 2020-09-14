@@ -9,12 +9,11 @@ import sn.moisemomo.aadpracticeproject.BuildConfig
 object ServiceGenerator {
     var httpClientBuilder = OkHttpClient.Builder()
 
-    private val retrofitBuilder: Retrofit.Builder = Retrofit.Builder()
-        .baseUrl("https://gadsapi.herokuapp.com/api/")
-        .addConverterFactory(GsonConverterFactory.create())
 
-
-    fun createService(): WebService {
+    fun createService(baseUrl: String): WebService {
+        val retrofitBuilder: Retrofit.Builder = Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
 
         if (BuildConfig.DEBUG) {
             val logging = HttpLoggingInterceptor()

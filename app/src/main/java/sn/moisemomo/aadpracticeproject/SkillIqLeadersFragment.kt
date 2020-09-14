@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_learning_leaders.*
 import kotlinx.android.synthetic.main.fragment_learning_leaders.progress
 import kotlinx.android.synthetic.main.fragment_skill_iq_leaders.*
+import sn.moisemomo.aadpracticeproject.viewmodels.LeadersViewModel
 
 
 /**

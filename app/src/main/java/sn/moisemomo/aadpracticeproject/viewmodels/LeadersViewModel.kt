@@ -1,20 +1,20 @@
-package sn.moisemomo.aadpracticeproject
+package sn.moisemomo.aadpracticeproject.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import kotlinx.coroutines.Dispatchers
+import sn.moisemomo.aadpracticeproject.repositories.LeadersRepository
 
 class LeadersViewModel: ViewModel() {
 
-    private val repository = LeadersRepository
-
     val learnerLeaders = liveData(Dispatchers.IO) {
-        val learners = repository.getLearningLeaders()
+        val learners = LeadersRepository.getLearningLeaders()
         emit(learners)
     }
 
+
     val  skillIQLeaders = liveData(Dispatchers.IO) {
-        val learners = repository.getSkillIQLeaders()
+        val learners = LeadersRepository.getSkillIQLeaders()
         emit(learners)
     }
 }
